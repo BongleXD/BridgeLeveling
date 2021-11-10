@@ -1,0 +1,6 @@
+name: BridgeLeveling
+version: '${version}'
+main: me.bloodyhan.bridgeleveling.Main
+softdepend: [ PlaceholderAPI ]
+authors: [ Bloody_Han ]
+description: Leveling for your bridge server
