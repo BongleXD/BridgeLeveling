@@ -1,3 +1,5 @@
+English (Current Page)  |  [简体中文](https://github.com/China-Han-1209/BridgeLeveling/blob/main/README-zh_CN.md)
+
 # BridgeLeveling Remake
 BridgeLeveling is an Bukkit Plugin can leveling for your Bridge Servers and provides lots of unique functions.
 
