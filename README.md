@@ -12,7 +12,7 @@ BridgeLeveling is an Bukkit Plugin can leveling for your Bridge Servers and prov
 - PlaceHolderAPI Hook (Version = 2.10.10)
 
 # Links (Free Download)
-- MCBBS: https://www.mcbbs.net/thread-965207-1-1.html
+- [MCBBS](https://www.mcbbs.net/thread-965207-1-1.html)
 
 # Dependency (Optional)
 - PlaceHolderAPI 2.10.10
