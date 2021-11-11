@@ -14,7 +14,6 @@ import org.bukkit.scheduler.BukkitTask;
  */
 public class OnlineRewardTask implements BridgeTask{
 
-    private Player p;
     private BukkitTask task;
     private int xp;
 
@@ -22,9 +21,11 @@ public class OnlineRewardTask implements BridgeTask{
         this.xp = MainConfig.XP_GIVE_ONLINE;
         this.task = Bukkit.getScheduler().runTaskTimerAsynchronously(Main.getInstance(), () -> {
             for (Player online : Bukkit.getOnlinePlayers()) {
-                PlayerData data = PlayerData.getData(p.getUniqueId());
+                PlayerData data = PlayerData.getData(online.getUniqueId());
                 data.addXp(this.xp);
-                p.sendMessage(PlaceholderAPI.setPlaceholders(p, MessageConfig.XP_GIVE_ONLINE.replace("{amount}", String.valueOf(this.xp))));
+                if(MainConfig.SEND_MESSAGE_XP_GAIN){
+                    online.sendMessage(PlaceholderAPI.setPlaceholders(online, MessageConfig.XP_GIVE_ONLINE.replace("{amount}", String.valueOf(this.xp))));
+                }
             }
         },MainConfig.REQUIREMENT_ONLINE_MILLIS, MainConfig.REQUIREMENT_ONLINE_MILLIS);
     }
