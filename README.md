@@ -9,7 +9,6 @@ BridgeLeveling is an Bukkit Plugin can leveling for your Bridge Servers and prov
 - Support MySQL / SQLite
 - Bridge Combat System
 - Ranking System
-- Support BridgePractice Plugin (Comming Soon)
 - Fully Configurable
 - PlaceHolderAPI Hook (Version = 2.10.10)
 
