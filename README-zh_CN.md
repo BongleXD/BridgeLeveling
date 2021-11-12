@@ -1,20 +1,17 @@
 # BridgeLeveling Remake
-BridgeLeveling 是一个 Bukkit 插件，可以为您的Bridge服务器提供更多独特的功能
+BridgeLeveling 是一个 Bukkit 插件，可以为您的搭路服务器提供更多独特的功能
 
 # 功能
 - 玩家最大搭路等级限制 (可根据需求自行关闭或调整)
-- 通过玩家互动获得EXP经验值
+- 通过玩家互动获得 EXP 经验值
   - 击杀玩家
   - 放置方块
   - 在线奖励
 - 支持 MySQL / SQLite 数据库
-- 玩家作战系统
+- 玩家战斗系统
 - 排名系统
 - 自定义配置系统
 - 支持 PlaceHolderAPI 插件 (Version = 2.10.10)
-
-# 待实现功能
-- 支持 BridgePractice 插件
 
 # 下载插件
 - [MCBBS](https://www.mcbbs.net/thread-965207-1-1.html) (国内用户推荐)
@@ -31,7 +28,7 @@ BridgeLeveling 是一个 Bukkit 插件，可以为您的Bridge服务器提供更
 6. 完成.
 
 # API
-- 事件监听器 - BridgeLeveling 插件提供了4个事件.
+- 事件监听器 - BridgeLeveling 插件提供了 4 个事件.
 ```java
 // 当玩家完成击杀时触发该事件
 @EventHandler
