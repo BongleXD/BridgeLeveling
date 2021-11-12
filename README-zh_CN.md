@@ -42,7 +42,7 @@ public void onLevelUp(PlayerLevelUpEvent e) {
   // 你的代码
 }
 
-// 当玩家排名提升时触发该事件
+// 当玩家段位提升时触发该事件
 @EventHandler
 public void onRankUp(PlayerRankUpEvent e) {
   // 你的代码
