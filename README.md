@@ -52,5 +52,5 @@ public void onXpGain(PlayerXpGainEvent e) {
 ```
 - Player Data
 ```java
-PlayerData data = PlayerData.getData(p.getUniqueId());
+PlayerData data = PlayerData.getData(Player.getUniqueId());
 ```
