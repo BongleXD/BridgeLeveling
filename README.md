@@ -31,22 +31,22 @@ BridgeLeveling is an Bukkit Plugin can leveling for your Bridge Servers and prov
 ```java
 @EventHandler
 public void onKill(PlayerKillEvent e) {
-  // to do
+  // TO DO
 }
 
 @EventHandler
 public void onLevelUp(PlayerLevelUpEvent e) {
-  // to do
+  // TO DO
 }
 
 @EventHandler
 public void onRankUp(PlayerRankUpEvent e) {
-  // to do
+  // TO DO
 }
 
 @EventHandler
 public void onXpGain(PlayerXpGainEvent e) {
-  // to do
+  // TO DO
 }
 
 ```
