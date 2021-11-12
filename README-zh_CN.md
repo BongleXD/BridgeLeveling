@@ -1,4 +1,4 @@
-# BridgeLeveling Remake
+# BridgeLeveling 
 BridgeLeveling 是一个 Bukkit 插件，可以为您的搭路服务器提供更多独特的功能
 
 # 功能
@@ -33,25 +33,25 @@ BridgeLeveling 是一个 Bukkit 插件，可以为您的搭路服务器提供更
 // 当玩家完成击杀时触发该事件
 @EventHandler
 public void onKill(PlayerKillEvent e) {
-  // 你的代码
+  // TO DO
 }
 
 // 当玩家等级提升时触发该事件
 @EventHandler
 public void onLevelUp(PlayerLevelUpEvent e) {
-  // 你的代码
+  // TO DO
 }
 
 // 当玩家段位提升时触发该事件
 @EventHandler
 public void onRankUp(PlayerRankUpEvent e) {
-  // 你的代码
+  // TO DO
 }
 
 // 当玩家获得经验时触发该事件
 @EventHandler
 public void onXpGain(PlayerXpGainEvent e) {
-  // 你的代码
+  // TO DO
 }
 
 ```
