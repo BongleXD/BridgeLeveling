@@ -4,8 +4,8 @@ English (Current Page)  |  [简体中文](https://github.com/China-Han-1209/Brid
 BridgeLeveling is an Bukkit Plugin can leveling for your Bridge Servers and provides lots of unique functions.
 
 # Features
-- Max Level Limitation (Can be disabled)
-- Obtain EXP from Kills / Placeing Blocks / Combat / Online Reward
+- Max Level Limitation (config.yml set max-level to -1 to disable)
+- Obtain EXP from Placeing Blocks / Combat / Online Reward
 - Support MySQL / SQLite
 - Bridge Combat System
 - Ranking System
