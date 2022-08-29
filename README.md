@@ -1,22 +1,32 @@
 English (Current Page)  |  [简体中文](https://github.com/China-Han-1209/BridgeLeveling/blob/main/README-zh_CN.md)
+<p>
+  <a href="https://github.com/Bongowole/BridgeLeveling/releases" target="_blank">
+    <img alt="downloads" src="https://img.shields.io/github/v/release/Bongowole/BridgeLeveling?color=4166f5&style=flat-square" />
+  </a>
+  <a href="https://github.com/Bongowole/BridgeLeveling/releases" target="_blank">
+    <img alt="downloads" src="https://img.shields.io/github/downloads/Bongowole/BridgeLeveling/total?color=4166f5&style=flat-square" />
+  </a>
+  <a href="https://github.com/Bongowole/BridgeLeveling/blob/main/LICENSE" target="_blank">
+    <img alt="license" src="https://img.shields.io/github/license/Bongowole/BridgeLeveling?color=4166f5&style=flat-square" />
+  </a>
+</p>
 
-# BridgeLeveling Remake
+# BridgeLeveling
 BridgeLeveling is an Bukkit Plugin can leveling for your Bridge Servers and provides lots of unique functions.
 
 # Features
-- Max Level Limitation (Can be disabled)
-- Obtain EXP from Kills / Placeing Blocks / Combat / Online Reward
+- Max Level Limitation (config.yml set max-level to -1 to disable)
+- Obtain EXP from Placeing Blocks / Combat / Online Reward
 - Support MySQL / SQLite
 - Bridge Combat System
 - Ranking System
-- Support BridgePractice Plugin (Comming Soon)
 - Fully Configurable
-- PlaceHolderAPI Hook (Version = 2.10.10)
+- PlaceHolderAPI Hook (Version >= 2.10.10)
 
 # Links (Free Download)
 - [MCBBS](https://www.mcbbs.net/thread-965207-1-1.html)
 
-# Dependency (Optional)
+# Dependency
 - [PlaceHolderAPI 2.10.10](https://github.com/PlaceholderAPI/PlaceholderAPI/releases/tag/2.10.10)
 
 # Installation
@@ -32,26 +42,26 @@ BridgeLeveling is an Bukkit Plugin can leveling for your Bridge Servers and prov
 ```java
 @EventHandler
 public void onKill(PlayerKillEvent e) {
-  // to do
+  // TO DO
 }
 
 @EventHandler
 public void onLevelUp(PlayerLevelUpEvent e) {
-  // to do
+  // TO DO
 }
 
 @EventHandler
 public void onRankUp(PlayerRankUpEvent e) {
-  // to do
+  // TO DO
 }
 
 @EventHandler
 public void onXpGain(PlayerXpGainEvent e) {
-  // to do
+  // TO DO
 }
 
 ```
 - Player Data
 ```java
-PlayerData data = PlayerData.getData(p.getUniqueId());
+PlayerData data = PlayerData.getData(Player.getUniqueId());
 ```
