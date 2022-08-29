@@ -2,7 +2,6 @@ package me.bloodyhan.bridgeleveling.command;
 
 import me.bloodyhan.bridgeleveling.Main;
 import me.bloodyhan.bridgeleveling.api.PlayerData;
-import me.bloodyhan.bridgeleveling.config.MainConfig;
 import me.bloodyhan.bridgeleveling.config.MessageConfig;
 import me.bloodyhan.bridgeleveling.util.Method;
 import me.clip.placeholderapi.PlaceholderAPI;

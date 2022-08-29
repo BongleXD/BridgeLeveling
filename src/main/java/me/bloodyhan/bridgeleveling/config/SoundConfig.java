@@ -1,8 +1,5 @@
 package me.bloodyhan.bridgeleveling.config;
 
-import org.bukkit.Bukkit;
-import org.bukkit.Sound;
-
 /**
  * @author Bloody_Han
  */

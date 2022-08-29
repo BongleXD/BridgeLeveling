@@ -2,13 +2,10 @@ package me.bloodyhan.bridgeleveling.database;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
-import com.zaxxer.hikari.HikariConfig;
-import com.zaxxer.hikari.HikariDataSource;
 import me.bloodyhan.bridgeleveling.Main;
 import org.bukkit.Bukkit;
 
 import java.io.File;
-import java.io.IOException;
 import java.sql.*;
 import java.util.Arrays;
 import java.util.List;

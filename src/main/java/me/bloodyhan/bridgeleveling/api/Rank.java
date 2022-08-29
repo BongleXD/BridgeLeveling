@@ -1,6 +1,5 @@
 package me.bloodyhan.bridgeleveling.api;
 
-import lombok.AccessLevel;
 import lombok.Getter;
 
 /**

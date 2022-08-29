@@ -1,12 +1,14 @@
 package me.bloodyhan.bridgeleveling.listener;
 
+import com.google.common.collect.Maps;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import me.bloodyhan.bridgeleveling.Main;
 import me.bloodyhan.bridgeleveling.api.PlayerData;
 import me.bloodyhan.bridgeleveling.api.PlayerKillEvent;
 import me.bloodyhan.bridgeleveling.config.MainConfig;
 import me.bloodyhan.bridgeleveling.config.MessageConfig;
 import me.bloodyhan.bridgeleveling.config.SoundConfig;
-import me.bloodyhan.bridgeleveling.task.TargetResetTask;
 import me.bloodyhan.bridgeleveling.util.Method;
 import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.Bukkit;
@@ -20,55 +22,53 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 
+import java.util.Map;
+import java.util.UUID;
+
 /**
  * @author Bloody_Han
  * @date 2019/02/20
  */
 public class KillListener implements Listener {
 
-    public KillListener(){
+    private Map<UUID, Pair<UUID, Long>> targetMap = Maps.newHashMap();
+
+    @EventHandler
+    public void onHit(EntityDamageByEntityEvent e) {
+        if (e.isCancelled() || !(e.getEntity() instanceof Player)) {
+            return;
+        }
+        Player p = (Player) e.getEntity();
+        Player attacker = e.getDamager() instanceof Player
+                ? (Player) e.getDamager()
+                : e.getDamager() instanceof Projectile && ((Projectile) e.getDamager()).getShooter() != e.getEntity()
+                ? (Player) ((Projectile) e.getDamager()).getShooter()
+                : null;
+        if (attacker == null) {
+            return;
+        }
+        PlayerData data = PlayerData.getData(attacker.getUniqueId());
+        if (data == null) {
+            return;
+        }
+        targetMap.put(p.getUniqueId(), new Pair<>(data.getUniqueId(), System.currentTimeMillis() + 10000L));
+    }
+
+    public KillListener() {
         Bukkit.getPluginManager().registerEvents(this, Main.getInstance());
     }
 
     @EventHandler
-    public void onHit(EntityDamageByEntityEvent e){
-        if(!(e.getEntity() instanceof Player) && PlayerData.getData(e.getEntity().getUniqueId()) == null){
-            return;
-        }
-        Player p = (Player) e.getEntity();
-        if (e.getDamager() instanceof Player && !e.isCancelled() && e.getDamager() != e.getEntity()) {
-            PlayerData data = PlayerData.getData(p.getUniqueId());
-            Player damager = (Player) e.getDamager();
-            data.setLastDamager(damager);
-            if(data.getTask() != null){
-                data.getTask().cancel();
-            }
-            data.setTask(new TargetResetTask(p));
-        }
-        else if (e.getDamager() instanceof Projectile && !e.isCancelled() && ((Projectile) e.getDamager()).getShooter() != e.getEntity()) {
-            PlayerData data = PlayerData.getData(p.getUniqueId());
-            Player shooter = (Player) ((Projectile) e.getDamager()).getShooter();
-            data.setLastDamager(shooter);
-            if(data.getTask() != null){
-                data.getTask().cancel();
-            }
-            data.setTask(new TargetResetTask(p));
-        }
-        else{
-            e.setCancelled(true);
-        }
-    }
-
-    @EventHandler
-    public void onDeath(PlayerDeathEvent e){
-        if(e.getEntity() == null){
+    public void onDeath(PlayerDeathEvent e) {
+        if (e.getEntity() == null) {
             return;
         }
         Player p = e.getEntity();
         PlayerData data = PlayerData.getData(p.getUniqueId());
         data.setKillStreak(0);
-        if (data.getLastDamager() != null) {
-            this.killPlayer(p, data.getLastDamager());
+        Pair<UUID, Long> damageData = targetMap.getOrDefault(data.getUniqueId(), new Pair<>(null, -1L));
+        if (damageData.first != null && System.currentTimeMillis() < damageData.second) {
+            this.killPlayer(p, Bukkit.getPlayer(damageData.first));
         }
     }
 
@@ -78,8 +78,9 @@ public class KillListener implements Listener {
         if (e.getTo().getY() < 0.1) {
             PlayerData data = PlayerData.getData(p.getUniqueId());
             data.setKillStreak(0);
-            if (data.getLastDamager() != null) {
-                this.killPlayer(p, data.getLastDamager());
+            Pair<UUID, Long> damageData = targetMap.getOrDefault(p.getUniqueId(), new Pair<>(null, -1L));
+            if (damageData.first != null && System.currentTimeMillis() < damageData.second) {
+                this.killPlayer(p, Bukkit.getPlayer(damageData.first));
             }
         }
     }
@@ -144,7 +145,7 @@ public class KillListener implements Listener {
         }
         data.checkRankUp();
         Bukkit.getPluginManager().callEvent(new PlayerKillEvent(victim, damager));
-        PlayerData.getData(victim.getUniqueId()).setLastDamager(null);
+        this.targetMap.remove(victim.getUniqueId());
         for (String cmd : MainConfig.TRIGGER_DEATH_COMMAND) {
             Bukkit.dispatchCommand(Bukkit.getConsoleSender(), PlaceholderAPI.setPlaceholders(victim, cmd
                     .replace("{damager}", damager.getName())
@@ -152,11 +153,20 @@ public class KillListener implements Listener {
         }
     }
 
+    @Data
+    @AllArgsConstructor
+    class Pair<A, B> {
+
+        private A first;
+        private B second;
+
+    }
+
     private int killAddXp(Player p) {
         PlayerData data = PlayerData.getData(p.getUniqueId());
-        int killXp = ( MainConfig.XP_GIVE_KILL_STREAK_BONUS - 1 ) * MainConfig.XP_GIVE_KILL_STREAK_BONUS + MainConfig.XP_GIVE_KILL;
-        if(MainConfig.XP_GIVE_KILL_STREAK_BONUS >= data.getKillStreak()) {
-            killXp = ( data.getKillStreak() - 1 ) * MainConfig.XP_GIVE_KILL_STREAK_BONUS + MainConfig.XP_GIVE_KILL;
+        int killXp = (MainConfig.XP_GIVE_KILL_STREAK_BONUS - 1) * MainConfig.XP_GIVE_KILL_STREAK_BONUS + MainConfig.XP_GIVE_KILL;
+        if (MainConfig.XP_GIVE_KILL_STREAK_BONUS >= data.getKillStreak()) {
+            killXp = (data.getKillStreak() - 1) * MainConfig.XP_GIVE_KILL_STREAK_BONUS + MainConfig.XP_GIVE_KILL;
         }
         return (int) (killXp * data.getBoost());
     }

@@ -14,7 +14,6 @@ import me.bloodyhan.bridgeleveling.database.SQLite;
 import me.bloodyhan.bridgeleveling.database.SqlValue;
 import me.bloodyhan.bridgeleveling.database.Value;
 import me.bloodyhan.bridgeleveling.database.ValueType;
-import me.bloodyhan.bridgeleveling.task.BridgeTask;
 import me.bloodyhan.bridgeleveling.util.Method;
 import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.Bukkit;
@@ -22,7 +21,10 @@ import org.bukkit.Location;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.UUID;
 
 /**
  * @author Bloody_Han
@@ -40,9 +42,7 @@ public class PlayerData {
     private int levelUpCost;
     private int killStreak = 0;
     private int blockPlace = 0;
-    private Player lastDamager = null;
     private Rank rank = null;
-    private BridgeTask task;
     private static HashMap<UUID, PlayerData> dataMap = Maps.newHashMap();
 
     public PlayerData(@NonNull UUID uuid){
