@@ -5,7 +5,6 @@ import me.bloodyhan.bridgeleveling.api.PlayerData;
 import me.bloodyhan.bridgeleveling.config.MainConfig;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.OfflinePlayer;
-import org.bukkit.entity.Player;
 
 public class PlaceholderHook extends PlaceholderExpansion {
 

@@ -1,22 +1,13 @@
 package me.bloodyhan.bridgeleveling.listener;
 
-import com.google.common.collect.Lists;
 import me.bloodyhan.bridgeleveling.Main;
 import me.bloodyhan.bridgeleveling.api.PlayerData;
-import me.bloodyhan.bridgeleveling.api.PlayerLevelUpEvent;
-import me.bloodyhan.bridgeleveling.api.PlayerRankUpEvent;
-import me.bloodyhan.bridgeleveling.config.MainConfig;
-import me.bloodyhan.bridgeleveling.config.MessageConfig;
-import me.bloodyhan.bridgeleveling.config.SoundConfig;
 import org.bukkit.Bukkit;
-import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
-
-import java.util.List;
 
 /**
  * @author Bloody_Han

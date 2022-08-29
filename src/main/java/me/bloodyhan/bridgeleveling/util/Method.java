@@ -2,7 +2,6 @@ package me.bloodyhan.bridgeleveling.util;
 
 import net.md_5.bungee.api.ChatColor;
 
-import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 

@@ -14,12 +14,15 @@ import java.lang.annotation.Target;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.math.BigDecimal;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * @author Bongle (Boougouh)
- * @createDate 2020/04/05
  * @version 2.1
+ * @createDate 2020/04/05
  */
 
 public class CommandManager extends BukkitCommand {

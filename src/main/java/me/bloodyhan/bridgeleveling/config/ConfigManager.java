@@ -1,7 +1,6 @@
 package me.bloodyhan.bridgeleveling.config;
 
 import me.bloodyhan.bridgeleveling.Main;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.YamlConfiguration;
 
