@@ -1,3 +1,15 @@
+<p>
+  <a href="https://github.com/Bongowole/BridgeLeveling/releases" target="_blank">
+    <img alt="downloads" src="https://img.shields.io/github/v/release/Bongowole/BridgeLeveling?color=4166f5&style=flat-square" />
+  </a>
+  <a href="https://github.com/Bongowole/BridgeLeveling/releases" target="_blank">
+    <img alt="downloads" src="https://img.shields.io/github/downloads/Bongowole/BridgeLeveling/total?color=4166f5&style=flat-square" />
+  </a>
+  <a href="https://github.com/Bongowole/BridgeLeveling/blob/main/LICENSE" target="_blank">
+    <img alt="license" src="https://img.shields.io/github/license/Bongowole/BridgeLeveling?color=4166f5&style=flat-square" />
+  </a>
+</p>
+
 # BridgeLeveling 
 BridgeLeveling 是一个 Bukkit 插件，可以为您的搭路服务器提供更多独特的功能
 
