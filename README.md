@@ -1,13 +1,13 @@
-English (Current Page)  |  [简体中文](https://github.com/China-Han-1209/BridgeLeveling/blob/main/README-zh_CN.md)
+English (Current Page)  |  [简体中文](https://github.com/BongleXD/BridgeLeveling/blob/main/README-zh_CN.md)
 <p>
-  <a href="https://github.com/Bongowole/BridgeLeveling/releases" target="_blank">
-    <img alt="downloads" src="https://img.shields.io/github/v/release/Bongowole/BridgeLeveling?color=4166f5&style=flat-square" />
+  <a href="https://github.com/BongleXD/BridgeLeveling/releases" target="_blank">
+    <img alt="downloads" src="https://img.shields.io/github/v/release/BongleXD/BridgeLeveling?color=4166f5&style=flat-square" />
   </a>
-  <a href="https://github.com/Bongowole/BridgeLeveling/releases" target="_blank">
-    <img alt="downloads" src="https://img.shields.io/github/downloads/Bongowole/BridgeLeveling/total?color=4166f5&style=flat-square" />
+  <a href="https://github.com/BongleXD/BridgeLeveling/releases" target="_blank">
+    <img alt="downloads" src="https://img.shields.io/github/downloads/BongleXD/BridgeLeveling/total?color=4166f5&style=flat-square" />
   </a>
-  <a href="https://github.com/Bongowole/BridgeLeveling/blob/main/LICENSE" target="_blank">
-    <img alt="license" src="https://img.shields.io/github/license/Bongowole/BridgeLeveling?color=4166f5&style=flat-square" />
+  <a href="https://github.com/BongleXD/BridgeLeveling/blob/main/LICENSE" target="_blank">
+    <img alt="license" src="https://img.shields.io/github/license/BongleXD/BridgeLeveling?color=4166f5&style=flat-square" />
   </a>
 </p>
 
@@ -24,7 +24,7 @@ BridgeLeveling is an Bukkit Plugin can leveling for your Bridge Servers and prov
 - PlaceHolderAPI Hook (Version >= 2.10.10)
 
 # Links (Free Download)
-- [MCBBS](https://www.mcbbs.net/thread-965207-1-1.html)
+- [Releases](https://github.com/BongleXD/BridgeLeveling/releases)
 
 # Dependency
 - [PlaceHolderAPI 2.10.10](https://github.com/PlaceholderAPI/PlaceholderAPI/releases/tag/2.10.10)

@@ -26,7 +26,7 @@ BridgeLeveling 是一个 Bukkit 插件，可以为您的搭路服务器提供更
 - 支持 PlaceHolderAPI 插件 (版本 >= 2.10.10)
 
 # 下载插件
-- [MCBBS](https://www.mcbbs.net/thread-965207-1-1.html) (国内用户推荐)
+- [Releases](https://github.com/BongleXD/BridgeLeveling/releases)
 
 # 前置插件
 - [PlaceHolderAPI 2.10.10](https://github.com/PlaceholderAPI/PlaceholderAPI/releases/tag/2.10.10) (必选)
